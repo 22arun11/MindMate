@@ -8,21 +8,26 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.applicationlogin.databinding.ActivityLoginBinding
 import com.example.applicationlogin.databinding.ActivityRegisterBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.jakewharton.rxbinding3.widget.textChanges
+
 
 @SuppressLint("CheckResult")
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
-
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+//Authentication
+        auth=FirebaseAuth.getInstance()
 // Full Name validation
         val nameStream = binding.etFullname.textChanges()
             . skipInitialValue()
@@ -104,7 +109,9 @@ class RegisterActivity : AppCompatActivity() {
 
 // Click
         binding.register.setOnClickListener{
-            startActivity(Intent(this,LoginActivity::class.java))
+            val email = binding.etEmail.text.toString().trim()
+            val password = binding.etPassword.text.toString().trim()
+            registerUser(email, password)
         }
         binding.tvHaveAccount.setOnClickListener{
             startActivity(Intent(this,LoginActivity::class.java))
@@ -128,5 +135,15 @@ class RegisterActivity : AppCompatActivity() {
     private fun showPasswordConfirmAlert(isNotValid: Boolean){
         binding.etConfirmPassword.error = if (isNotValid) "Password MisMatch" else null
     }
-
+    private fun registerUser(email: String, password: String){
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this){
+                if (it.isSuccessful){
+                    startActivity(Intent(this, LoginActivity::class.java))
+                    Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
+                }else{
+                    Toast.makeText(this, it.exception?.message, Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
 }
