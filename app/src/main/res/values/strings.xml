@@ -33,7 +33,7 @@
         Your Email or Username
     </string>
     <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in">Sign in</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
@@ -41,7 +41,7 @@
     <string name="login_failed">"Login failed"</string>
     <string name="login_forgot_pw">Forgot Password?</string>
     <string name="login_havent_account">
-        I dont Have an Account
+        I don\'t Have an Account
         <font color="#00C988">
             <b>Register</b>
         </font>
