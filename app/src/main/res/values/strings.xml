@@ -7,8 +7,7 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="started_title">Hello world</string>
-    <string name="started_sub_title">
-        Nice to Meet You, Come Join our Community
+    <string name="started_sub_title">Nice to Meet You, Come Join our Community
         <br>
             <b>Login</b>
             if you already have an account
@@ -23,7 +22,7 @@
     <string name="btn_login">Login</string>
     <string name="login_title">Login to App</string>
     <string name="login_sub_title">
-        <font color="#00C988">
+        <font color="#1B3D81">
             <b>Login</b>
         </font>
         if you already have an account
@@ -42,13 +41,13 @@
     <string name="login_forgot_pw">Forgot Password?</string>
     <string name="login_havent_account">
         I don\'t Have an Account
-        <font color="#00C988">
+        <font color="#1B3D81">
             <b>Register</b>
         </font>
     </string>
     <string name="create_an_account">Create an Account</string>
     <string name="register_sub_title">
-        <font color="#00C988">
+        <font color="#1B3D81">
             <b>Register</b>
         </font>
         To get Started with the App
@@ -58,7 +57,7 @@
     <string name="register_email">Your Email</string>
     <string name="have_account">
         Already have an Account?
-        <font color="#00C988">
+        <font color="#1B3D81">
             <b>Login</b>
         </font>
     </string>
