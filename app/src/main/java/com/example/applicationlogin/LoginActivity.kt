@@ -74,6 +74,9 @@ class LoginActivity : AppCompatActivity() {
         binding.tvHaventAccount.setOnClickListener{
             startActivity(Intent(this,RegisterActivity::class.java))
         }
+        binding.tvForgotPw.setOnClickListener {
+            startActivity(Intent(this, ResetPasswordActivity::class.java))
+        }
     }
 
 
