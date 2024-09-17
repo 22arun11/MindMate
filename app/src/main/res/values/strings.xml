@@ -68,7 +68,7 @@
     <string name="btn_logout">Logout</string>
     <string name="reset_pw_title">Reset your password</string>
     <string name="reset_pw_sub_title">
-        <font color="#00C9B6">Reset Password</font>
+        <font color="#1B3D81">Reset Password</font>
         if you forgot your password.
     </string>
     <string name="btn_reset_pw">Reset Password</string>
