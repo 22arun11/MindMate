@@ -66,6 +66,8 @@
     <string name="home_title">Home</string>
     <string name="home_sub_title">"welcome you to the home page "</string>
     <string name="btn_logout">Logout</string>
+    <string name="btn_select">Select Image</string>
+    <string name="btn_predict">Predict the Output</string>
     <string name="reset_pw_title">Reset your password</string>
     <string name="reset_pw_sub_title">
         <font color="#1B3D81">Reset Password</font>
@@ -78,4 +80,12 @@
             <b>Login</b>
         </font>
     </string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="image_illustration_home">Image</string>
+
+
 </resources>
