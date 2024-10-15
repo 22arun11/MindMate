@@ -22,6 +22,10 @@ import org.tensorflow.lite.support.image.ops.ResizeOp
 import org.tensorflow.lite.support.image.ops.TransformToGrayscaleOp
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.io.IOException
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
+import androidx.core.view.GravityCompat
+import android.view.MenuItem
 
 class HomeActivity : AppCompatActivity() {
 
@@ -31,6 +35,9 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var selectImageLauncher: ActivityResultLauncher<Intent>
     private lateinit var cameraLauncher: ActivityResultLauncher<Intent>
     private lateinit var labels: List<String>
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var navigationView: NavigationView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +46,7 @@ class HomeActivity : AppCompatActivity() {
 
         try {
             auth = FirebaseAuth.getInstance()
+            setupNavigationDrawer()
             binding.btnLogout.setOnClickListener {
                 auth.signOut()
                 Intent(this, LoginActivity::class.java).also {
@@ -151,5 +159,62 @@ class HomeActivity : AppCompatActivity() {
             ExifInterface.ORIENTATION_ROTATE_270 -> matrix.postRotate(270f)
         }
         return Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+    }
+
+    private fun setupNavigationDrawer() {
+        drawerLayout = binding.drawerLayout
+        navigationView = binding.navigationView
+
+        // Set up the toolbar
+        setSupportActionBar(binding.toolbar)
+
+        // This is crucial - it enables the hamburger menu
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_menu)
+        }
+
+        navigationView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.nav_home -> {
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
+                R.id.nav_profile -> {
+                    startActivity(Intent(this, ProfileActivity::class.java))
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
+                R.id.nav_settings -> {
+                    startActivity(Intent(this, SettingsActivity::class.java))
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
+                R.id.nav_logout -> {
+                    performLogout()
+                    true
+                }
+                else -> false
+            }
+        }
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                drawerLayout.openDrawer(GravityCompat.START)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+    private fun performLogout() {
+        auth.signOut()
+        Intent(this, LoginActivity::class.java).also {
+            it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(it)
+            Toast.makeText(this, "Logout Successful", Toast.LENGTH_SHORT).show()
+        }
     }
 }
