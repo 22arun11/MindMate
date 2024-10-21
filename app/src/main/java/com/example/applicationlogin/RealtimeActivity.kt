@@ -11,7 +11,7 @@ import com.example.applicationlogin.databinding.ActivityProfileBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 
-class ProfileActivity : AppCompatActivity() {
+class RealtimeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityProfileBinding
     private lateinit var auth: FirebaseAuth
@@ -56,10 +56,16 @@ class ProfileActivity : AppCompatActivity() {
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }
+                R.id.nav_realtime -> {
+                    startActivity(Intent(this, RealtimeActivity::class.java))
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
                 R.id.nav_logout -> {
                     performLogout()
                     true
                 }
+
                 else -> false
             }
         }

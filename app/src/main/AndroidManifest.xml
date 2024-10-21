@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Applicationlogin"
         tools:targetApi="31">
         <activity
+            android:name=".RealtimeActivity"
+            android:exported="false"/>
+        <activity
             android:name=".ResetPasswordActivity"
             android:exported="false"/>
         <activity
@@ -28,8 +31,8 @@
             android:name=".ui.login.LoginActivity"
             android:exported="false"
             android:label="@string/title_activity_login"/>
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".SettingsActivity" />
+        <activity android:name=".ProfileActivity"/>
+        <activity android:name=".SettingsActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

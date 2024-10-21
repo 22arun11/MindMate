@@ -83,8 +83,8 @@
                 style="@style/ButtonGreen"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="36dp"
                 android:layout_marginEnd="20dp"
                 android:text="@string/btn_logout"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -92,8 +92,7 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/home_subtitle"
-                app:layout_constraintVertical_bias="0.693"/>
-
+                app:layout_constraintVertical_bias="0.872"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_select"
                 style="@style/ButtonGreen"
@@ -113,9 +112,9 @@
                 android:id="@+id/btn_predict"
                 style="@style/ButtonGreen"
                 android:layout_width="0dp"
-                android:layout_marginTop="10dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
                 android:text="@string/btn_predict"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -123,21 +122,20 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/home_subtitle"
-                app:layout_constraintVertical_bias="0.287"/>
-
+                app:layout_constraintVertical_bias="0.355"/>
             <TextView
                 android:id="@+id/resview"
+                style="@style/Title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="Prediction"
-                style="@style/Title"
-                android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/btn_predict"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"/>
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"
+                android:text="Prediction"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/btn_predict"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>

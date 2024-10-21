@@ -194,6 +194,11 @@ class HomeActivity : AppCompatActivity() {
                     performLogout()
                     true
                 }
+                R.id.nav_realtime -> {
+                    startActivity(Intent(this, RealtimeActivity::class.java))
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
                 else -> false
             }
         }
