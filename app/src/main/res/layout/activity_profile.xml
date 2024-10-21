@@ -26,7 +26,14 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
         <!-- Your Existing Layout Content -->
-
+        <TextView
+            android:id="@+id/textViewRealtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="This is Profile"
+            android:textSize="18sp"
+            android:textColor="@android:color/black" />
     </LinearLayout>
 
     <!-- Navigation Drawer -->
