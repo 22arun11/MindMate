@@ -49,6 +49,7 @@ class SettingsActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_profile -> {
+                    startActivity(Intent(this, ProfileActivity::class.java))
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }
@@ -59,6 +60,11 @@ class SettingsActivity : AppCompatActivity() {
                 }
                 R.id.nav_realtime -> {
                     startActivity(Intent(this, RealtimeActivity::class.java))
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
+                R.id.nav_chatbot -> {
+                    startActivity(Intent(this, ChatbotActivity::class.java))
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }

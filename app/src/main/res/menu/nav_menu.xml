@@ -15,8 +15,12 @@
             android:title="Settings"/>
         <item
             android:id="@+id/nav_realtime"
-            android:icon="@drawable/ic_logout"
+            android:icon="@drawable/ic_realtime"
             android:title="Realtime"/>
+        <item
+            android:id="@+id/nav_chatbot"
+            android:icon="@drawable/ic_chatbot"
+            android:title="Chatbot"/>
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_logout"

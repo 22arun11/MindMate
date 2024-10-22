@@ -57,6 +57,7 @@ dependencies {
     implementation("org.tensorflow:tensorflow-lite-metadata:0.1.0")
     implementation("androidx.exifinterface:exifinterface:1.3.7")
     implementation("com.google.firebase:firebase-firestore-ktx:25.1.0")
+    implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")

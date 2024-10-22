@@ -6,6 +6,7 @@
     <color name="primary_color">#1B3D81</color>
     <color name="grey">#888888</color>
     <color name="grey_light">#F0F0F0</color>
-
+    <color name="prompt_background">#43AAFF</color>
+    <color name="response_background">#FF7043</color>
 
 </resources>
